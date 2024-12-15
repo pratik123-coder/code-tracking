@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const SideBarButton = ({
   name,
@@ -12,7 +14,9 @@ const SideBarButton = ({
   active: string;
   setActive: any;
 }) => {
+  
   return (
+
     <div
       className={`w-full ${
         active === name ? "bg-[#ff6700]" : ""
@@ -130,6 +134,7 @@ const SideBarButton = ({
 };
 const SideBarPage = () => {
   const [active, setActive] = useState("Dashboard");
+  const pathname = usePathname();
   
   return (
     <div className="lg:flex hidden flex-col justify-between h-full">
@@ -149,18 +154,18 @@ const SideBarPage = () => {
           <SideBarButton
             name={"Dashboard"}
             active={active}
-            setActive={setActive}
+            setActive={pathname === "/dashboard" ? setActive : undefined}
           />
           <div className="space-y-2">
             <SideBarButton
               name={"Manage Bus"}
               active={active}
-              setActive={setActive}
+              setActive={pathname === "/livebus" ? setActive : undefined}
             />
             <div className="flex flex-col font-semibold pl-14 space-y-4 cursor-pointer">
-              <h1 className=" text-[0.8rem] text-gray-500 hover:text-[#ff6700] transition duration-500 ease-in-out">
-                Bus Management
-              </h1>
+              <Link href="/livebus" className=" text-[0.8rem] text-gray-500 hover:text-[#ff6700] transition duration-500 ease-in-out">
+                Live Running Buses
+              </Link>
               <h1 className=" text-[0.7rem] text-gray-500 hover:text-[#ff6700] transition duration-500 ease-in-out">
                 Seat Layer Management
               </h1>
