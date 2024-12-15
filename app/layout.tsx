@@ -17,6 +17,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const helvetica = localFont({
+  src: "./fonts/Helvetica.ttf",
+  variable: "--font-helvetica",
+  weight: "100 900",
+})
 
 export const metadata: Metadata = {
   title: "OneTKT",
@@ -32,7 +37,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} ${helvetica.variable} antialiased`}
         >
           {children}
         </body>
