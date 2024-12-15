@@ -11,9 +11,14 @@ const dashboard = () => {
     signOut({ redirectUrl: "/" });
   };
   return (
-    <div className="bg-[#F8F9FA] h-screen flex flex-col items-center">
-      <h1 className="text-black text-[5rem]">dashboard</h1>
-
+    <div className="flex flex-col items-center">
+      <h1 className="text-black text-[5rem] font-helvetica">dashboard</h1>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
       <button className="bg-black text-white p-4" onClick={handleSignOut}>
         SignOut
       </button>

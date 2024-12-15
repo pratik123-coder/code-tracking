@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <div>
+    <div className="font-helvetica">
       <h1>Google</h1>
       {/* <SignedIn>
         <SignInButton />
